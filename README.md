@@ -5,19 +5,18 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :users
+- has_many :messages, through: :
 
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :tweets
-- has_many :comments
-  has_many :group
+- has_many :messages
+- has_many :group
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -26,4 +25,13 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
+
+
+## groupテーブル
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- has_many :group_users, through: :messages
+
+
+
