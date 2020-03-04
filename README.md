@@ -5,10 +5,10 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :users
-- has_many :messages, through: :
+- belongs_to :users
+- belongs_to :groups
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -16,7 +16,7 @@
 |nickname|string|null: false|
 ### Association
 - has_many :messages
-- has_many :group
+- has_many :group, through: :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -27,11 +27,11 @@
 - belongs_to :user
 
 
-## groupテーブル
+## groupsテーブル
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :group_users, through: :messages
+- has_many :user, through: :groups_users
 
 
 
