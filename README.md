@@ -16,7 +16,7 @@
 |nickname|string|null: false|
 ### Association
 - has_many :messages
-- has_many :group, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :groups_users
 
 ## messagesテーブル
