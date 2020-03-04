@@ -33,7 +33,7 @@
 
 ## groupsテーブル
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :user, through: :groups_users
 - has_many :groups_users
