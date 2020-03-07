@@ -39,19 +39,12 @@
   .message_form
     .input_box
       .input_box_name_image
-        %input{class: "text_form",:type => "text",:placeholder => "type a message"} 
-        %form{:action => "#", :method => "post"}
+        %input{class: "text_form", type: "text", placeholder: "type a message"} 
+        %form{action: "#", method: "post"}
       
       
         %label{class: "input_box__image", for: "messege_image"}
           = icon('fas', 'image')
-          %input{class: "input_box__image_file",type: "file",id:"messege_image"}
+          %input{class: "input_box__image_file",type: "file", id: "messege_image"}
     
-      %input{class:"send_btn",:type => "submit", :value => "send"}
-    
- 
-
-
-
-  
-
+      %input{class:"send_btn",type: "submit", value: "send"}
