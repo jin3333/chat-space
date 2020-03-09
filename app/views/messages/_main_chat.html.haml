@@ -1,1 +1,32 @@
-.mai
+.chat_main
+  .group_info
+    .group_info_left_box
+      %h2.group_info_left_box_current_group
+        test
+      %ul.group_info_left_box_member_list
+        member name
+    .group_info_edit_btn
+      =link_to "Edit","#"
+
+  .messages
+    .message_data
+      .message_info
+        %p.messages_message_data_name
+          Jin
+        %a.messages_message_data_day
+          2020/03/06(Fri) 14:42:11
+      %p.messages_message_data_post
+        おはよう
+ 
+  .message_form
+    .input_box
+      .input_box_name_image
+        %input{class: "text_form", type: "text", placeholder: "type a message"} 
+        %form{action: "#", method: "post"}
+      
+      
+        %label{class: "input_box__image", for: "messege_image"}
+          = icon('fas', 'image')
+          %input{class: "input_box__image_file",type: "file", id: "messege_image"}
+    
+      %input{class:"send_btn",type: "submit", value: "send"}

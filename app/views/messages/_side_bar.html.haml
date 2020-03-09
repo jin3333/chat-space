@@ -1,0 +1,17 @@
+.side_bar
+  .user_name
+    .top_item
+      =current_user.name
+      .iteme_icon
+        = link_to edit_user_path(current_user)  do
+          = icon('fa', 'cog',  class: "user_name__btn--icon")
+        = link_to new_group_path  do
+          = icon('fa', 'edit',  class: "user_name__btn--icon")
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          %p.groups_group_name
+            = group.name
+          %p.groups_group_last_messeage 
+            まだメッセージがありません
