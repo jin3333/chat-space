@@ -10,8 +10,8 @@
   .groups
     - current_user.groups.each do |group|
       .group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           %p.groups_group_name
             = group.name
           %p.groups_group_last_messeage 
-            まだメッセージがありません
+            = group.show_last_message
