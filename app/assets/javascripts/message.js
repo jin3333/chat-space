@@ -70,7 +70,7 @@ $(function(){
 // jidou
     var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id")
-    console.log(last_message_id)
+
     $.ajax({
       url: "api/messages",
       type: "get",
@@ -78,7 +78,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages){
-      console.log(messages)
       if (messages.length !== 0) {
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
